@@ -43,11 +43,11 @@ export const Tr = styled.tr<IStylesTRProps>`
     transition-duration: 150ms;
     
     &:hover {
-      background-color: rgb(226 232 240 / var(--tw-bg-opacity)) /* #e2e8f0 */;
+      background-color: rgb(226 232 240) /* #e2e8f0 */;
     }
   `}
 
-  cursor: ${({ $clickable = false }) => $clickable && `cursor-pointer`};
+  cursor: ${({ $clickable = false }) => $clickable && "pointer"};
 
   background-color: ${({ $color = "normal" }) => trStyle[$color]};
 `;
