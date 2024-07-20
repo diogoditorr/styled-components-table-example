@@ -1,5 +1,4 @@
-import classNames from "classnames";
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 
 import defaultIcon from "../../assets/dog-icon.jpg";
 
@@ -8,6 +7,7 @@ import { Container, IStylesWrappedImageProps } from "./styles";
 interface IWrappedImageRootProps extends IStylesWrappedImageProps {
   className?: string;
   children?: ReactNode;
+  style?: CSSProperties;
 }
 
 const WrappedImageRoot = ({
@@ -15,12 +15,14 @@ const WrappedImageRoot = ({
   $size,
   className,
   children,
+  style,
 }: IWrappedImageRootProps) => {
   return (
     <Container
       $rounded={$rounded}
       $size={$size}
-      className={classNames("shrink-0", className)}
+      className={className}
+      style={{ flexShrink: 0, ...style }}
     >
       {children}
     </Container>
